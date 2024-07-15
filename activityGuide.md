@@ -1,0 +1,198 @@
+# Batao Activity: Create a Snake Game!
+
+This activity will guide you through using Batao to create a simple snake game, demonstrating iterative code development with AI assistance.
+
+**Objectives:**
+
+* Learn to use Batao to generate code from prompts.
+* Understand how to embed code in Markdown files for enhanced interaction with Batao.
+* Experience an iterative approach to code development using AI.
+
+**Time:**  30 minutes (maximum)
+
+**Prerequisites:**
+
+* Install Batao as described in the README above.
+* Have a text editor or IDE for viewing and editing code files.
+
+**Code Embedding in Markdown:**
+
+Before starting, let's quickly recap how to embed code in Markdown. This is essential for providing code to Batao and ensuring proper syntax highlighting.
+
+Use triple backticks (```) before and after your code block. You can optionally specify the language after the first set of backticks for syntax highlighting.
+
+> [!IMPORTANT]
+> Take 5-10 minutes to read the following resource and try out code embedding: [Creating and Highlighting Code Blocks on GitHub](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)
+
+Create a markdown file (.md extension) as `prompt.md` and paste the below content and run the command `batao -i prompt.md -o code_explanation.md -m pro`:
+
+````markdown
+I'm new to programming, I'm having trouble understanding how the below HTML and CSS code works to make a responsive photo gallery page. Break it down and explain in detail using simple Indian English.
+
+index.html
+```html
+<div class="gallery">
+  <img src="image1.jpg" alt="Image 1">
+  <img src="image2.jpg" alt="Image 2">
+  <img src="image3.jpg" alt="Image 3">
+</div>
+```
+style.css
+```css
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+```
+````
+Open the response file `code_explanation.md` and go through the explanation of the above code. 
+
+**Advantage:** Code embedding makes your prompts clearer to Batao, allowing for better analysis and responses. Syntax highlighting further improves readability and understanding.
+
+
+
+> [!TIP]
+> Use VS Code for editing and viewing markdown files. Use `ctrl + shift + v` to view the markdown file in preview mode.
+
+
+## Activity Steps:
+
+### Step 1: Generate the Initial Snake Game Structure
+
+1. **Create a Markdown file:** Create a new file named `snake_game.md`.
+2. **Add the prompt:** Inside `snake_game.md`, write the following prompt:
+
+   ```markdown
+   Create a simple snake game using HTML, CSS, and JavaScript. Use the canvas element for the game UI.  Provide the code within separate code blocks for HTML, CSS, and JavaScript.
+   ```
+
+3. **Run Batao:** Execute the following command in your terminal:
+
+   ```bash
+   batao -i snake_game.md -o snake_code.md
+   ```
+
+   This command tells Batao to read the prompt from `snake_game.md` and save the generated code into a file named `snake_code.md`.  If you encounter a "RECITATION error", retry the command.
+
+4. **Examine the Output:** Open `snake_code.md`. You should have HTML, CSS, and JavaScript code for a basic snake game, similar to the example below:
+
+   ````markdown
+   ```html
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Snake Game</title>
+       <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+       <h1>Snake</h1>
+       <canvas id="gameCanvas" width="400" height="400"></canvas>
+       <script src="script.js"></script>
+   </body>
+   </html>
+   ```
+
+   ```css
+   body {
+       background-color: #333;
+       color: #eee;
+       font-family: monospace;
+       text-align: center;
+   }
+
+   canvas {
+       background-color: #000;
+       border: 2px solid #eee;
+   }
+   ```
+
+   ```javascript
+   const canvas = document.getElementById('gameCanvas');
+   const ctx = canvas.getContext('2d');
+
+   const snake = [{ x: 10, y: 10 }];
+   let food = {};
+   let dx = 1;
+   let dy = 0;
+
+   function generateFood() {
+       food = {
+           x: Math.floor(Math.random() * (canvas.width / 10)),
+           y: Math.floor(Math.random() * (canvas.height / 10))
+       };
+   }
+
+   // more functions like for implementing the game logic like draw(), update(), etc
+   ```
+   ````
+
+5.  **Create HTML, CSS and JS files:** Manually create three files: `index.html`, `style.css`, and `script.js`. Copy the respective code blocks from `snake_code.md` and paste them into their corresponding files. Save these files in the same directory.
+
+
+
+### Step 2:  Iterative Refinement
+
+Now the fun begins!  Let's make some changes to our game using Batao:
+
+1. **Change the Game Speed:**
+
+   * **Add to Prompt:** Open `snake_code.md` and add the following above the existing code blocks, keeping the previous code:
+
+     ```markdown
+     Modify the code below to make the snake move twice as slow.
+
+     // Output generated in the previous request...
+     ```
+
+   * **Run Batao:** 
+     ```bash
+     batao -i snake_code.md -o snake_code.md
+     ``` 
+
+   * **Test:** Open the updated `snake_code.md`, copy the updated JavaScript code block and replace the code in your `script.js` file. Open or refresh the `index.html` file in a browser to test the change. If the change isn't what you expected, refine your prompt and try again.
+
+2. **Change the Background Color:**
+
+   * **Add to Prompt:** Add the following to your `snake_code.md` file, below the previous content:
+
+     ```markdown
+     Modify the CSS above to change the background color of the game canvas to lightblue.
+
+     // Output generated in the previous request...
+     ```
+
+   * **Run Batao, Test, Repeat!** Follow the same steps as before: run Batao, copy the updated CSS code block from `snake_code.md` and replace the code in `style.css`, then test the changes in your browser, and refine if needed.
+
+3. **Add a Score Display:**
+
+   * **Add to Prompt:** 
+
+     ```markdown
+     Modify the code below to add a score display at the top-left corner of the screen. The score should increase every time the snake eats a piece of food.
+
+     // Output generated in the previous request...
+     ```
+
+   * **Run, Test, Repeat!** Continue the process of adding prompts, running Batao, and testing by updating your `script.js` file with the generated JavaScript code. 
+
+### Step 3: Experiment and Have Fun!
+
+You've got the hang of it! Here are a few more ideas to try:
+
+* **Change Food Appearance:** Make the food a different shape or color.
+* **Add Obstacles:** Introduce walls or barriers to the game. 
+* **Game Over Condition:** Implement a game over state when the snake hits itself or a boundary.
+
+> [!IMPORTANT]
+> **Important Notes:**
+>
+>* **RECITATION Error:** If you get this error, simply re-run your Batao command.
+>* **Prompt Clarity:** Be as clear and specific as possible in your prompts for the best results.
+>* **Iterative Development:** Remember, good software development is iterative! Don't be afraid to make small changes and test frequently. 
+Have fun coding with Batao! 
