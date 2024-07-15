@@ -69,7 +69,7 @@ Open the response file `code_explanation.md` and go through the explanation of t
 2. **Add the prompt:** Inside `snake_game.md`, write the following prompt:
 
    ```markdown
-   Create a simple snake game using HTML, CSS, and JavaScript. Use the canvas element for the game UI.  Provide the code within separate code blocks for HTML, CSS, and JavaScript.
+   Create a simple snake-like game using HTML, CSS, and JavaScript. Use the canvas element for the game UI.  Provide the code within separate code blocks for HTML, CSS, and JavaScript.
    ```
 
 3. **Run Batao:** Execute the following command in your terminal:
