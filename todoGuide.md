@@ -141,13 +141,11 @@ This guide will help you create a To-Do List app using HTML, CSS, and JavaScript
 
         const completeButton = document.createElement('button');
         completeButton.textContent = 'Complete';
-        completeButton.classList.add('completeButton');
-        completeButton.addEventListener('click', completeTask); 
+        completeButton.classList.add('completeButton'); 
 
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.classList.add('deleteButton');
-        deleteButton.addEventListener('click', deleteTask);
 
         li.appendChild(completeButton);
         li.appendChild(deleteButton);
@@ -174,6 +172,28 @@ This guide will help you create a To-Do List app using HTML, CSS, and JavaScript
         const li = event.target.parentElement;
         li.classList.toggle('completed');
     }
+    
+    function addTask() {
+        const taskText = taskInput.value;
+        if (taskText === '') return;
+    
+        const li = document.createElement('li');
+        li.textContent = taskText;
+    
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.classList.add('completeButton');
+        completeButton.addEventListener('click', completeTask);  //add this line
+    
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('deleteButton');
+    
+        li.appendChild(completeButton);
+        li.appendChild(deleteButton);
+        taskList.appendChild(li);
+        taskInput.value = ''; 
+    }
     ```
 
     This function:
@@ -192,6 +212,29 @@ This guide will help you create a To-Do List app using HTML, CSS, and JavaScript
     function deleteTask(event) {
         const li = event.target.parentElement; 
         li.remove(); 
+    }
+
+    function addTask() {
+        const taskText = taskInput.value;
+        if (taskText === '') return;
+    
+        const li = document.createElement('li');
+        li.textContent = taskText;
+    
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.classList.add('completeButton');
+        completeButton.addEventListener('click', completeTask);
+    
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('deleteButton');
+        deleteButton.addEventListener('click', deleteTask);
+    
+        li.appendChild(completeButton);
+        li.appendChild(deleteButton);
+        taskList.appendChild(li);
+        taskInput.value = ''; 
     }
     ```
 
