@@ -14,10 +14,6 @@
    - **Strings**
      - Basic operations (concatenation, substring, search)
      - String manipulation problems (anagrams, palindromes)
-   - **Linked Lists**
-     - Singly and doubly linked lists
-     - Basic operations (insert, delete, reverse)
-     - Common problems (detect cycle, merge two sorted lists)
 
 3. **Introduction to Algorithms**
    - Definition and importance
@@ -29,20 +25,11 @@
    - Space complexity
    - Analyzing complexity of simple algorithms (linear search, bubble sort)
 
-5. **Linear Data Structures**
-   - **Stacks**
-     - Stack operations (push, pop, peek)
-     - Applications (balanced parentheses, next greater element)
-   - **Queues**
-     - Queue operations (enqueue, dequeue, front)
-     - Circular queue
-     - Priority queues
-
-6. **Recursion**
+5. **Recursion**
    - Basic recursion problems (factorial, Fibonacci)
    - Understanding recursion depth and stack overflow
 
-7. **Hashing**
+6. **Hashing**
    - Hash maps and sets
    - Applications (counting frequency, finding pairs)
 
@@ -78,9 +65,14 @@
    - Basic greedy strategy
    - Applications (activity selection, fractional knapsack)
 
-7. **Two Pointers**
-   - Basic technique (pair sum, triplet sum)
-   - Fast and slow pointers (cycle detection)
+7. **Linear Data Structures**
+   - **Stacks**
+     - Stack operations (push, pop, peek)
+     - Applications (balanced parentheses, next greater element)
+   - **Queues**
+     - Queue operations (enqueue, dequeue, front)
+     - Circular queue
+     - Priority queues
 
 #### Level 3: Advanced and Optional Concepts
 
