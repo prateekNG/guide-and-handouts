@@ -38,8 +38,8 @@ Your solution should meet the following technical requirements. Regardless of th
    - **Framework Requirement**: Use a popular JavaScript framework, such as **React** or **Vue**.
    - **Component-Based Structure**: Break your application into reusable components (e.g., each task, flashcard, or chat message could be a component in your app).
 
-#### **5. Optional Full Stack Integration (For Advanced Candidates)**
-   - **Node.js Backend**: For those who wish to go further, add a Node.js backend to handle data storage and retrieval. For example, you could build a simple backend to store and retrieve user information, chat messages, or to-do items.
+#### **5. Full Stack Integration**
+   - **Node.js Backend**: Add a Node.js backend to handle data storage and retrieval. For example, you could build a simple backend to store and retrieve user information, chat messages, or to-do items.
    - **Data Flow**: Ensure data is synchronized smoothly between the frontend and backend using JSON.
 
 ---
